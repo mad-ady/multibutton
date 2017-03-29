@@ -56,7 +56,7 @@ while(1){
                 
                 $logger->debug("Type: ". $event->{type}.", code: ".$keyMapping{$event->{code}}.", value: ".$event->{value});
                 
-                if($event->{value} == 1){
+                if($event->{value} == 1 || $event->{value} == 2){
                         #key was pressed. Record that it was pressed and the end code will take care of logging it to the buffer
                         $lastPressedTS{$keyMapping{$event->{code}}}=1;
                         push @buffer, $keyMapping{$event->{code}};
