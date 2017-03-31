@@ -3,7 +3,7 @@
 
 # Set logging level (logging goes to STDERR/journalctl). Allowed values are: DEBUG, INFO, WARN, ERROR, FATAL
 
-logging: DEBUG
+logging: INFO
 
 # Set updatePeriod to the number of microseconds between key presses checks
 # Default is 200ms between key presses
