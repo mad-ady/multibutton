@@ -5,7 +5,7 @@ Description=Multibutton key handler for a keyboard-like input device
 Type=simple
 ExecStart=/usr/local/bin/multibutton.pl -i "/dev/input/by-id/usb-Sonix_Technology_Co.__Ltd._USB_2.0_Camera-event-if00" -c "/etc/multibutton.yaml"
 Restart=always
-RestartSec=3
+WatchdogSec=300
 
 [Install]
 WantedBy=multi-user.target
