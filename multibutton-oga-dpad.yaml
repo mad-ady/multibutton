@@ -1,0 +1,95 @@
+
+# Configuration for Odroid Go Advance for use with ncmpc
+
+# Set logging level (logging goes to STDERR/journalctl). Allowed values are: DEBUG, INFO, WARN, ERROR, FATAL
+
+logging: INFO
+
+# Set updatePeriod to the number of microseconds between key presses checks
+# Default is 50ms between key presses
+
+updatePeriod: 50000
+
+# Set bufferSize to how many keys to keep in memory when analizing a multiple key press.
+# The larger the value, the more time you have to wait until any action executes
+
+bufferSize: 2
+
+# Set longPress to a fraction - how many times does a key have to appear in a sequence before considering it a long press.
+# The default is 0.7 which means 70% of the keys in bufferSize have to be the same to register as a long press
+
+longPress: 0.7
+
+# The following section defines possible key sequences and an action that should be executed in the background
+# Note that the command runs as the same user you run multibutton.pl by default
+
+# Example commands (one line each):
+#KEY_CAMERA: logger "Key has been pressed"
+#KEY_CAMERA-KEY_CAMERA: logger "Key has been double pressed"; logger "Two commands have been executed"
+#KEY_CAMERA-KEY_CAMERA-KEY_CAMERA: su -c "logger 'Tripleclick - This command is run as a different user (uid $EUID)'" odroid
+#LONGKEY_CAMERA: DISPLAY=:0 xeyes
+
+BTN_DPAD_UP: /usr/local/bin/uinput.py KEY_UP
+BTN_DPAD_UP-BTN_DPAD_UP: /usr/local/bin/uinput.py KEY_UP
+LONGBTN_DPAD_UP: /usr/local/bin/uinput.py KEY_PAGEUP
+
+BTN_DPAD_DOWN: /usr/local/bin/uinput.py KEY_DOWN
+BTN_DPAD_DOWN-BTN_DPAD_DOWN: /usr/local/bin/uinput.py KEY_DOWN
+LONGBTN_DPAD_DOWN: /usr/local/bin/uinput.py KEY_PAGEDOWN
+
+BTN_DPAD_LEFT: /usr/local/bin/uinput.py KEY_LEFT
+BTN_DPAD_LEFT-BTN_DPAD_LEFT: /usr/local/bin/uinput.py KEY_LEFT
+LONGBTN_DPAD_LEFT: /usr/local/bin/uinput.py KEY_LEFT
+
+BTN_DPAD_RIGHT: /usr/local/bin/uinput.py KEY_RIGHT
+BTN_DPAD_RIGHT-BTN_DPAD_RIGHT: /usr/local/bin/uinput.py KEY_RIGHT
+LONGBTN_DPAD_RIGHT: /usr/local/bin/uinput.py KEY_RIGHT
+
+BTN_TRIGGER_HAPPY1: /usr/local/bin/uinput.py KEY_2
+BTN_TRIGGER_HAPPY1-BTN_TRIGGER_HAPPY1: /usr/local/bin/uinput.py KEY_2
+LONGBTN_TRIGGER_HAPPY1: /usr/local/bin/uinput.py KEY_2
+
+BTN_TRIGGER_HAPPY2: /usr/local/bin/uinput.py KEY_3
+BTN_TRIGGER_HAPPY2-BTN_TRIGGER_HAPPY2: /usr/local/bin/uinput.py KEY_3
+LONGBTN_TRIGGER_HAPPY2: /usr/local/bin/uinput.py KEY_3
+
+BTN_TRIGGER_HAPPY3: /usr/local/bin/uinput.py KEY_B;/usr/local/bin/uinput.py KEY_B; /usr/local/bin/uinput.py KEY_B; /usr/local/bin/uinput.py KEY_B; /usr/local/bin/uinput.py KEY_B 
+BTN_TRIGGER_HAPPY3-BTN_TRIGGER_HAPPY3: /usr/local/bin/uinput.py /usr/local/bin/uinput.py KEY_B;/usr/local/bin/uinput.py KEY_B; /usr/local/bin/uinput.py KEY_B; /usr/local/bin/uinput.py KEY_B; /usr/local/bin/uinput.py KEY_B
+LONGBTN_TRIGGER_HAPPY3:  /usr/local/bin/uinput.py KEY_B;/usr/local/bin/uinput.py KEY_B; /usr/local/bin/uinput.py KEY_B; /usr/local/bin/uinput.py KEY_B; /usr/local/bin/uinput.py KEY_B
+
+BTN_TRIGGER_HAPPY4: /usr/local/bin/uinput.py KEY_F; /usr/local/bin/uinput.py KEY_F; /usr/local/bin/uinput.py KEY_F; /usr/local/bin/uinput.py KEY_F; /usr/local/bin/uinput.py KEY_F;
+BTN_TRIGGER_HAPPY4-BTN_TRIGGER_HAPPY4: /usr/local/bin/uinput.py KEY_F; /usr/local/bin/uinput.py KEY_F; /usr/local/bin/uinput.py KEY_F; /usr/local/bin/uinput.py KEY_F; /usr/local/bin/uinput.py KEY_F;
+LONGBTN_TRIGGER_HAPPY4: /usr/local/bin/uinput.py KEY_F; /usr/local/bin/uinput.py KEY_F; /usr/local/bin/uinput.py KEY_F; /usr/local/bin/uinput.py KEY_F; /usr/local/bin/uinput.py KEY_F;
+
+BTN_TRIGGER_HAPPY5: /usr/local/bin/uinput.py KEY_2
+BTN_TRIGGER_HAPPY5-BTN_TRIGGER_HAPPY5: /usr/local/bin/uinput.py KEY_2
+LONGBTN_TRIGGER_HAPPY5: /usr/local/bin/uinput.py KEY_2
+
+BTN_TRIGGER_HAPPY6: /usr/local/bin/uinput.py KEY_2
+BTN_TRIGGER_HAPPY6-BTN_TRIGGER_HAPPY6: /usr/local/bin/uinput.py KEY_2
+LONGBTN_TRIGGER_HAPPY6: /usr/local/bin/uinput.py KEY_2
+
+BTN_TL: /usr/local/bin/uinput.py KEY_2
+BTN_TL-BTN_TL: /usr/local/bin/uinput.py KEY_2
+LONGBTN_TL: /usr/local/bin/uinput.py KEY_2
+
+BTN_TR: /usr/local/bin/uinput.py KEY_2
+BTN_TR-BTN_TR: /usr/local/bin/uinput.py KEY_2
+LONGBTN_TR: /usr/local/bin/uinput.py KEY_2
+
+BTN_WEST: /usr/local/bin/uinput.py KEY_ENTER
+BTN_WEST-BTN_WEST: /usr/local/bin/uinput.py KEY_ENTER
+LONGBTN_WEST: /usr/local/bin/uinput.py KEY_ENTER
+
+BTN_SOUTH: /usr/local/bin/uinput.py KEY_LEFTSHIFT KEY_P
+BTN_SOUTH-BTN_SOUTH: /usr/local/bin/uinput.py KEY_LEFTSHIFT KEY_P
+LONGBTN_SOUTH: /usr/local/bin/uinput.py KEY_LEFTSHIFT KEY_P
+
+BTN_EAST: /usr/local/bin/uinput.py KEY_A
+BTN_EAST-BTN_EAST: /usr/local/bin/uinput.py KEY_A
+LONGBTN_EAST: /usr/local/bin/uinput.py KEY_A
+
+BTN_NORTH: /usr/local/bin/uinput.py KEY_D
+BTN_NORTH-BTN_NORTH: /usr/local/bin/uinput.py KEY_D
+LONGBTN_NORTH: /usr/local/bin/uinput.py KEY_D
+
