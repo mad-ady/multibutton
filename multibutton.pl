@@ -196,7 +196,7 @@ sub usage {
 #build a hash with key-code - label mappings
 sub parseKeyMapping {
 	while(<main::DATA>){
-		if(/\#define ([^\s]+)\s+([0-9x]+)/){
+		if(/\#define ([^\s]+)\s+([0-9a-fx]+)/){
 			my $label = $1;
 			my $code = $2;
 			if($code=~/x/){
